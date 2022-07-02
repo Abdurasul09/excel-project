@@ -46,7 +46,7 @@ module.exports = (env, argv) => {
             filename: filename('js')
         },
         devServer: {
-            port: '8080',
+            port: '8070',
             // open: true,
             // hot: true,
             static: true
