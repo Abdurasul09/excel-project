@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Abdurasul09/excel-project#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@babel/eslint-parser": "^7.19.1",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
@@ -39,6 +40,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.12.1"
+    "@babel/polyfill": "^7.12.1",
+    "normalize.css": "^8.0.1"
   }
 }
