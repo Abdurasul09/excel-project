@@ -8,9 +8,8 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 module.exports = (env, argv) => {
   const isProd = argv.mode === "production";
   const isDev = !isProd;
-  const filename = (ext) => 
+  const filename = (ext) =>
     isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`;
-  
 
   const plugins = () => {
     const base = [
@@ -20,7 +19,7 @@ module.exports = (env, argv) => {
       new CopyPlugin({
         patterns: [
           {
-            from: path.resolve(__dirname, "src", 'favicon.ico'),
+            from: path.resolve(__dirname, "src", "favicon.ico"),
             to: path.resolve(__dirname, "dist"),
           },
         ],
@@ -49,13 +48,13 @@ module.exports = (env, argv) => {
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: filename("js"),
-      filename: '[name].bundle.js'
+      filename: "[name].bundle.js",
     },
     devServer: {
-      port: '5050',
+      port: "5050",
       // open: true,
       // hot: true,
-      static: true
+      static: true,
     },
     devtool: isDev ? "source-map" : false,
     resolve: {
@@ -70,11 +69,7 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.s[ac]ss$/i,
-          use: [
-            MiniCssExtractPlugin.loader, 
-            "css-loader",
-            "sass-loader"
-            ],
+          use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         },
         {
           test: /\.m?js$/,
