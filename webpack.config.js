@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
 
-module.exports = (env, argv) => {
+module.exports = (argv) => {
   const isProd = argv.mode === "production";
   const isDev = !isProd;
   const filename = (ext) =>
@@ -39,7 +39,6 @@ module.exports = (env, argv) => {
   console.log("isDev", isDev);
 
   return {
-    // target: "web",
     context: path.resolve(__dirname, "src"),
     entry: {
       main: ["@babel/polyfill", "./index.js"],
@@ -52,8 +51,6 @@ module.exports = (env, argv) => {
     },
     devServer: {
       port: "5050",
-      // open: true,
-      // hot: true,
       static: true,
     },
     devtool: isDev ? "source-map" : false,
